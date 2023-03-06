@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Electronic Cashier</title>
+</head>
+<body>
+  <header>
+
+    <h1>Electronic Cashier</h1>
+  </header>
+  <main>
+    <form id="registerForm">
+      <input type="number" name="id" id="userId"placeholder="Ingrese numero de documento">
+      <input type="password" name="password" id="userPassword" placeholder="Password">
+      <button class="" type="submit">Confirmar</button>
+    </form>
+<form id="cashSelect">
+    <select name="cash" class="cash">
+      <option selected>Seleccionar Billetes</option>
+      <option value="5000">$5.000</option>
+      <option value="10000">$10.000</option>
+      <option value="20000">$20.000</option>
+      <option value="50000">$50.000</option>
+      <option value="100000">$100.000</option>
+    </select>
+
+      <input type="number" id="cashQuantity" placeholder="Cantidad de billetes">
+      <button class="" type="submit">Confirmar</button>
+  </form>
+
+  <!-- Cantidad a retirar -->
+
+  <form id="withdrawal">
+    <input type="number" name="withdrawal" id="amountToWithdrawl" placeholder="Ingrese cantidad que desea retirar">
+    <button class="" type="submit">Confirmar</button>
+  </form>
+
+  </main>
+
+  <footer>
+
+  </footer>
+
+<script src="./script.js"> </script>
+</body>
+</html>
