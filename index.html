@@ -11,15 +11,16 @@
 
     <h1>Electronic Cashier</h1>
   </header>
-  <main>
+  <main style="margin: 10px; background-color: aqua; padding: 10px; border-radius: 18px; background-image: url(https://img.freepik.com/vector-premium/diseno-plano-cajero-automatico-tarjeta-credito-pin-introducido_168129-7.jpg); background-size: cover;">
+    <h4>LOGIN</h4>
     <form id="registerForm">
-      <input type="number" name="id" id="userId"placeholder="Ingrese numero de documento">
-      <input type="password" name="password" id="userPassword" placeholder="Password">
+      <input type="number" name="id" id="userId"placeholder="Ingrese numero de documento" style="background-color: rgb(251, 251, 251); padding: 10px; border-radius: 12px;">
+      <input type="password" name="password" id="userPassword" placeholder="Password" style="background-color: rgb(251, 251, 251); padding: 10px; border-radius: 12px;">
       <button class="" type="submit">Confirmar</button>
     </form>
-<form id="cashSelect">
-    <select name="cash" class="cash">
-      <option selected>Seleccionar Billetes</option>
+<form id="cashSelect" style="margin-top: 20px;">
+    <select name="cash" class="cash" style="background-color: rgb(251, 251, 251); padding: 10px; border-radius: 12px;">
+      <option selected >Seleccionar Billetes</option>
       <option value="5000">$5.000</option>
       <option value="10000">$10.000</option>
       <option value="20000">$20.000</option>
@@ -27,14 +28,14 @@
       <option value="100000">$100.000</option>
     </select>
 
-      <input type="number" id="cashQuantity" placeholder="Cantidad de billetes">
+      <input type="number" id="cashQuantity" placeholder="Cantidad de billetes" style="background-color: rgb(251, 251, 251); padding: 10px; border-radius: 12px;"">
       <button class="" type="submit">Confirmar</button>
   </form>
 
   <!-- Cantidad a retirar -->
 
-  <form id="withdrawal">
-    <input type="number" name="withdrawal" id="amountToWithdrawl" placeholder="Ingrese cantidad que desea retirar">
+  <form id="withdrawal"style="margin-top: 20px;">
+    <input type="number" name="withdrawal" id="amountToWithdrawl" placeholder="Ingrese cantidad que desea retirar" style="background-color: rgb(251, 251, 251); padding: 10px; border-radius: 12px;">
     <button class="" type="submit">Confirmar</button>
   </form>
 

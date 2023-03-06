@@ -54,7 +54,7 @@ let cantidadRetirada = 0;
 function calculoBillete(variable, denominacion, cantidadRetirada) {
   let cash = countCash.filter(element => element.billete == denominacion )
   cash.forEach(element => {
-    console.log(`El total de billetes de ${denominacion} es ${variable += parseInt(element.billete)  * (parseInt(element.cantidad) - cantidadRetirada)}`);
+    console.log(`El total en billetes de ${denominacion} es ${variable += parseInt(element.billete)  * (parseInt(element.cantidad) - cantidadRetirada)}`);
   });
 }
 
@@ -67,9 +67,7 @@ registerForm.addEventListener("submit", (event) => {
   console.log(userId.value);
   console.log(userPassword.value);
 
-  const registeredUser =  users.find(element => element.id == userId.value)
-
-
+  const registeredUser =  users.find(element => element.id == userId.value && element.password == userPassword.value )
 
       console.log(registeredUser)
       if(!registeredUser) {
@@ -77,7 +75,7 @@ registerForm.addEventListener("submit", (event) => {
         location.reload();
       } else {
         alert(`Bienvenido ${registeredUser.name}`)
-
+        registerForm.reset();
         if (registeredUser.userType == 1) {
           const cashSelect = document.getElementById('cashSelect');
           cashSelect.addEventListener("submit", (event) => {
@@ -95,7 +93,7 @@ registerForm.addEventListener("submit", (event) => {
 
 
            countCash.forEach(element => {
-             console.log(`El total en caja es ${totalCashier += parseInt(element.billete) * parseInt(element.cantidad)}`);
+             console.log(`El total en cajero es ${totalCashier += parseInt(element.billete) * parseInt(element.cantidad)}`);
              console.log(`El total de billetes de  ${ parseInt(element.billete)} es ${parseInt(element.cantidad)}`);
             });
 
@@ -106,13 +104,13 @@ registerForm.addEventListener("submit", (event) => {
             calculoBillete(total50, "50000", restar);
             calculoBillete(total100, "100000", restar);
 
-            console.log(`El total en cajero es ${totalCashier}`)
+            // console.log(`El total en cajero es ${totalCashier}`)
 
           });
 
 
         } else {
-          console.log(totalCashier)
+          console.log(`saldo del cajero ${totalCashier}`)
           if (totalCashier == 0) {
             alert("Cajero en mantenimiento, vuelva pronto")
           } else {
@@ -126,8 +124,8 @@ registerForm.addEventListener("submit", (event) => {
             console.log(parseInt(money));
             // cashSelect.reset();
 
-            if (money % 10 == 0) {
-              console.log("entro")
+            if (money % 5000 == 0) {
+              // console.log("entro")
                 if (money < totalCashier && (totalCashier - money) > 0) {
                   console.log(Math.floor(money))
                   console.log(totalCashier -= money)
@@ -163,12 +161,12 @@ registerForm.addEventListener("submit", (event) => {
 
 
                 } else {
-                  console.log("Por favor ingrese una cantidad menor")
+                  alert("Por favor ingrese una cantidad menor")
 
                 }
 
             } else {
-              console.log("no es posible entregar la cantidad selecciona, por favor ingresa otro valor")
+              alert("no es posible entregar la cantidad selecciona, por favor ingresa otro valor")
 
             }
 
